@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello, world!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <div id="fadein"></div>
+  <style>
+    /* For best practice, move CSS below to an external CSS file. */
+    @keyframes fadeinall {
+    0% {
+      opacity: 1; }
+    97% {
+      opacity: 0; }
+    98% {
+      opacity: 0;
+      -webkit-transform: translateY(0);
+      transform: translateY(0); }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+      z-index: -1; } }
+    #fadein {
+      opacity: 1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+      background-color: #ffe23da5;
+      z-index: 999;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation: fadeinall 1s normal both;
+      animation: fadeinall 1s normal both;
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s; }
+  </style>
+  <nav class="nav" id="nav">
+    <a href="#home" class="logo"></a>
+    <div class="nav-buttons">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="javascript:void(0);" id="menu-toggle" onclick="togglemenu()">
+      <div class="menu-toggle__bar1"></div>
+      <div class="menu-toggle__bar2"></div>
+      <div class="menu-toggle__bar3"></div>
+    </a>
+  </nav>
+  <style>
+  .nav {
+    background-color: #BCC6CC; /* Dark background for the top bar */
+    padding: 10px 20px; /* Add padding for spacing */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out the elements */
+    align-items: center; /* Align items vertically */
+    position: sticky; /* Make it stick to the top of the page */
+    top: 0;
+    z-index: 1000;
+    }
+
+    /* Logo or Title Styling */
+    .nav a.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(86, 85, 85, 0.748);
+    text-decoration: none;
+    }
+
+    /* Button Styling */
+    .nav .nav-buttons a {
+    background-color: #6fe942; /* Green buttons */
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    }
+
+    .nav .nav-buttons a:hover {
+    background-color: #45a049; /* Darker green on hover */
+    }
+
+    /* Responsive Navigation */
+    .nav #menu-toggle {
+    display: none; /* Initially hidden for larger screens */
+    }
+  @media screen and (max-width: 600px) {
+    .nav.nav--open {
+      position: relative; }
+    .nav.nav--open #menu-toggle {
+      position: absolute;
+      right: 0;
+      top: 0; }
+    .nav.nav--open a {
+      float: none;
+      display: block;
+      text-align: left; } }
+  .menu-toggle__bar1, .menu-toggle__bar2, .menu-toggle__bar3 {
+    width: 21px;
+    height: 3px;
+    background-color: #000000;
+    margin: 4px 0;
+    transition: 0.3s; }
+  .menu-toggle--open .menu-toggle__bar1 {
+    transform: translate(0, 7px) rotate(-45deg); }
+  .menu-toggle--open .menu-toggle__bar2 {
+    opacity: 0; }
+  .menu-toggle--open .menu-toggle__bar3 {
+    transform: translate(0, -7px) rotate(45deg); }
+  </style>
+ <header>
+    <h1>A4X - Agentic workflows to support your app CX</h1>
+</header>
+<main>
+    <section class="title-section">
+        <h1>Welcome to our CX services</h1>
+        <h2>Explore innovative solutions and <strong>strategic plans</strong> tailored for your business</h2>
+    </section>
+    <section>
+        <h2>Our Approach</h2>
+        <img src="https://media.istockphoto.com/id/2154608762/pt/foto/colleagues-discussing-project-at-workplace.jpg?s=1024x1024&w=is&k=20&c=8am3PeJ5paDkinixg3N8do7JZuPU795qPb8N1X5snkM=" alt="">
+        <p>We build state-of-the-art solutions to transform customer interactions into valuable experiences.</p>
+        <a href="https://www.github.com/lucas-althoff" id="github" target="_blank">Visit Our GitHub</a>
+    </section>
+
+    <section>
+        <h2>Our View</h2>
+        <img src="https://github.com/lucas-althoff/A4X/blob/main/static/background.png?raw=true" alt="">
+        <p>Turning the world most impactful APPs depends on transforming usual experiences into valuable experiences.</p>
+        <a href="https://www.github.com/lucas-althoff" id="github" target="_blank">Contact Us!</a>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Lucas Althoff. All Rights Reserved.</p>
+</footer>
+  <script>
+  function togglemenu() {
+    var x = document.getElementById("nav");
+    if (x.className === "nav") {
+      x.className += " nav--open";
+    } else {
+      x.className = "nav";
+    }
+    var element = document.getElementById("menu-toggle");
+    element.classList.toggle("menu-toggle--open");
+  }
+  </script>
+  <script type="text/javascript">
+  window.onload = function(){
+    setTimeout(function(){
+      document.getElementById("fadein").remove();
+    },1000);
+  };
+  window.watsonAssistantChatOptions = {
+          integrationID: "c972003d-0abc-4847-8f8a-4fc8bf03e6d0", 
+          region: "jp-tok", 
+          serviceInstanceID: "74fdf1f6-cb6c-49f7-b13c-6d5cfb28a64b", 
+          onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+  </script>
+</body>
+</html>
