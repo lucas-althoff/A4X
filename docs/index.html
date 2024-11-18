@@ -64,7 +64,7 @@
   </nav>
   <style>
   .nav {
-    background-color: #BCC6CC; /* Dark background for the top bar */
+    background-color: #001628; /* Dark background for the top bar */
     padding: 10px 20px; /* Add padding for spacing */
     display: flex; /* Use flexbox for layout */
     justify-content: space-between; /* Space out the elements */
@@ -84,7 +84,7 @@
 
     /* Button Styling */
     .nav .nav-buttons a {
-    background-color: #6fe942; /* Green buttons */
+    background-color: #8dee694d; /* Green buttons */
     color: white;
     text-decoration: none;
     padding: 10px 15px;
@@ -100,6 +100,10 @@
     /* Responsive Navigation */
     .nav #menu-toggle {
     display: none; /* Initially hidden for larger screens */
+    }
+
+    span{
+        color: #e9072b;
     }
   @media screen and (max-width: 600px) {
     .nav.nav--open {
@@ -124,9 +128,16 @@
     opacity: 0; }
   .menu-toggle--open .menu-toggle__bar3 {
     transform: translate(0, -7px) rotate(45deg); }
+
+  h1 {
+    color: #99d9d9;
+  }
   </style>
  <header>
-    <h1>A4X - Agentic workflows for customer eXperience</h1>
+  <!-- Load library from the CDN -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <h1>A4X - <span id="element"></span> for Customer e<i>X</i>perience</h1>
 </header>
 <main>
     <section class="title-section">
@@ -181,6 +192,14 @@
     t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
     document.head.appendChild(t);
   });
+  <!-- Setup and start animation! -->
+    var typed = new Typed('#element', {
+      strings: ['<i>AI</i>', '<i>Agentic</i>', '<i>Assistant</i>', '<i>Artificial Intelligence</i>'],
+      typeSpeed: 50,
+      backSpeed: 20,
+      loop: true
+    });
+  
   </script>
 </body>
 </html>
