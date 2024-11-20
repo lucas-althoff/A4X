@@ -10,7 +10,7 @@
       </br>
     </span>
     </br></br>
-    Empowering CX Strategy and Decision Makinhg
+    Empowering CX Strategy and Decision Making
   </h1>
   <p align="center">
     <img src="static/a4x_typing.gif" alt="Typing A4X" />
